@@ -1,0 +1,42 @@
+body {
+    margin: 0 auto;
+    min-height: 100vh;
+    width: 800px;
+    display: grid;
+    grid-template: 
+        "...... ...... ...... ...... ......" 30px
+        "header header header header header" 150px
+        "...... ...... ...... ...... ......" 10px
+        "left   ...... center ...... right " 1fr
+        "...... ...... ...... ...... ......" 10px
+        "footer footer footer footer footer" 200px
+        / 150px 20px 1fr 10px 200px;
+}
+header {
+    grid-area: header;
+}
+main {
+    grid-area: center;
+}
+nav {
+    grid-area: left;
+}
+aside {
+    grid-area: right;
+}
+footer {
+    grid-area: footer;
+}
+
+/* メディアクエリー レスポンスブデザイン化 */
+@media screen and (max-width: 900px) {
+    body {
+        grid-template: 
+            "header" 150px
+            "center" 1fr
+            "left"
+            "right"
+            "footer" 200px;
+    }
+
+}
